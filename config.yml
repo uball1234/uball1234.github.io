@@ -48,12 +48,12 @@ params:
       - articles
 
     socialIcons:
-        - name: buymeacoffe
-          url: "https://ko-fi.com/heycharlola"
+        - name: resume
+          url: "file:///C:/Users/ymaou/AppData/Local/Temp/Temp1_Copy%20of%20Uval%20Maouda%20Resume.docx.zip/CopyofUvalMaoudaResume.docx.html"
         - name: github
-          url: "https://github.com/charlola"
+          url: "https://uball1234.github.io/"
         - name: linkedin
-          url: "https://www.linkedin.com/in/heycharlola/"
+          url: "https://www.linkedin.com/in/uval-maouda-672a46198"
 
       # add more social icons. find more in svg.html file
       # - name: youtube
