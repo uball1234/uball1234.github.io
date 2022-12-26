@@ -1,0 +1,133 @@
+<!doctype html><html lang=en dir=auto>
+<head><meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=robots content="index, follow">
+<title>Pyramid Of Pain | Uval Maouda</title>
+<meta name=keywords content>
+<meta name=description content="What is the Pyramid of Pain and why is it needed? Pyramid of pain is a concept that helps security teams assess the effectiveness of their threat intelligence program and helps to identify ways to improve them. Essentially, this concept explains the value of indicators of compromise and how they can potentially agitate adversaries. Moreover, it explains how the loss of some indicators of compromise can cause more harm to adversaries than the loss of others.">
+<meta name=author content="Author's Name">
+<link rel=canonical href=/articles/pyramid_of_pain/>
+<link crossorigin=anonymous href=/assets/css/stylesheet.min.6c183503def1ac491340ec11bc99295e962bee702757fc04e8dad92381623f15.css integrity="sha256-bBg1A97xrEkTQOwRvJkpXpYr7nAnV/wE6NrZI4FiPxU=" rel="preload stylesheet" as=style>
+<script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=/images/favicon.ico>
+<link rel=icon type=image/png sizes=16x16 href=/images/favicon-16x16.png>
+<link rel=icon type=image/png sizes=32x32 href=/images/favicon-32x32.png>
+<link rel=apple-touch-icon href=/images/apple-touch-icon.png>
+<link rel=mask-icon href=/images/apple-touch-icon.png>
+<meta name=theme-color content="#2e2e33">
+<meta name=msapplication-TileColor content="#2e2e33">
+<noscript>
+<style>#theme-toggle,.top-link{display:none}</style>
+<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
+</noscript>
+</head>
+<body id=top>
+<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<header class=header>
+<nav class=nav>
+<div class=logo>
+<a href accesskey=h title="Uval Maouda (Alt + H)">Uval Maouda</a>
+<span class=logo-switches>
+<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</button>
+</span>
+</div>
+<ul id=menu>
+<li>
+<a href=/ title=Home><span>Home</span></a>
+</li>
+<li>
+<a href=articles/ title=Articles>
+<span>Articles</span>
+</a>
+</li>
+<li>
+<a href=contact/ title=Contact>
+<span>Contact</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class=main>
+<article class=post-single>
+<header class=post-header>
+<div class=breadcrumbs><a href>Home</a>&nbsp;»&nbsp;<a href=/articles/>Articles</a></div>
+<h1 class=post-title>
+Pyramid Of Pain
+</h1>
+<div class=post-meta><span title="2022-12-16 12:57:00 -0800 -0800">December 16, 2022</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Author's Name</div>
+</header> <div class=toc>
+<details>
+<summary accesskey=c title="(Alt + C)">
+<span class=details>Table of Contents</span>
+</summary>
+<div class=inner><ul>
+<li>
+<a href=#what-is-the-pyramid-of-pain-and-why-is-it-needed aria-label="What is the Pyramid of Pain and why is it needed?">What is the Pyramid of Pain and why is it needed?</a></li>
+<li>
+<a href=#hash-values aria-label="HASH VALUES:">HASH VALUES:</a><ul>
+<li>
+<a href=#what-is-a-hash-value aria-label="What is a Hash Value?">What is a Hash Value?</a></li>
+<li>
+<a href=#why-is-this-important aria-label="Why is this Important?">Why is this Important?</a></li></ul>
+</li>
+<li>
+<a href=#ip-address aria-label="IP ADDRESS:">IP ADDRESS:</a><ul>
+<li>
+<a href=#what-is-an-ip-address aria-label="What is an IP address?">What is an IP address?</a></li></ul>
+</li>
+<li>
+<a href=#dns-domain-names aria-label="DNS: Domain names:">DNS: Domain names:</a></li>
+<li>
+<a href=#networkhost-artifacts aria-label="Network/HOST ARTIFACTS:">Network/HOST ARTIFACTS:</a></li>
+<li>
+<a href=#tools aria-label=TOOLS:>TOOLS:</a></li>
+<li>
+<a href=#ttps aria-label=TTPS:>TTPS:</a>
+</li>
+</ul>
+</div>
+</details>
+</div>
+<div class=post-content>
+<p><img loading=lazy src="data:image/png;base64,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" alt>
+</p>
+<h2 id=what-is-the-pyramid-of-pain-and-why-is-it-needed>What is the Pyramid of Pain and why is it needed?</h2>
+<p>Pyramid of pain is a concept that helps security teams assess the effectiveness of their threat intelligence program and helps to identify ways to improve them. Essentially, this concept explains the value of indicators of compromise and how they can potentially agitate adversaries. Moreover, it explains how the loss of some indicators of compromise can cause more harm to adversaries than the loss of others.</p>
+<h2 id=hash-values>HASH VALUES:</h2>
+<h3 id=what-is-a-hash-value>What is a Hash Value?</h3>
+<p>According to Microsoft, a hash value is a numeric value of a fixed length that uniquely identifies data. In other words, it is a condensed representation of its input that is produced by a cryptographic primitive called a hash function/hash algorithm. These cryptographic hash functions are one-way functions that are extremely difficult to reverse. A couple of common hashing algorithms are: MD5, SHA-1, SHA-2.</p>
+<h3 id=why-is-this-important>Why is this Important?</h3>
+<p>This is important information because security professionals usually take malicious software and run it through a hashing program that produces a unique hash for that specific malicious software. There are open source tools like VirusTotal and Metadefender Cloud - OPSWAT that allow security professionals to do lookups on these unique hashes to find a malicious file. Although these hash values make it easy for us to spot malicious files that we have hashes for, an attacker can modify the malicious software/file by a single bit, which would produce a completely different hash value, making it trivial for security professionals to identify the malicious file.</p>
+<h2 id=ip-address>IP ADDRESS:</h2>
+<h3 id=what-is-an-ip-address>What is an IP address?</h3>
+<p>An IP address is a unique address that identifies any device connected to a network. IP addresses allow for computers to communicate with each other both over the network as well as over the internet. Many organizations use defense tactics, such as firewalls, to block, drop, or deny inbound requests from specific IP addresses. Although this tactic may make it slightly difficult for attackers, it is not bulletproof. Experienced attackers can simply use a new public IP address or something like Fast Flux to make it more difficult for security professionals to carry out IP blocking. Fast Flux, in simple terms, is a DNS technique that has multiple IP addresses associated with a domain name and is constantly changing, making it harder for firewalls to block their IP addresses.</p>
+<h2 id=dns-domain-names>DNS: Domain names:</h2>
+<p>Domain names are IP addresses that are put into a string of text. For example: Google.com = 8.8.8.8 and/or 8.8.4.4. Many times attackers use a technique called typosquatting. Typosquatting is creating domain names that are similar to the real domains. An example of this is the following: ggoogle.com instead of google.com. The reason they do this is because they are hoping that you misspell the domain name and end up getting directed to their malicious page. Many attackers also use something called a Punnycode which uses Unicode characters in the domain name to imitate the known domain name. It is quite annoying for attackers to change their domain because they would most likely need to buy a new domain, as well as register it and modify DNS records.</p>
+<h2 id=networkhost-artifacts>Network/HOST ARTIFACTS:</h2>
+<p>These include traces of the attacker such as registry values, suspicious process execution, and values known to be created by specific pieces of malware, files, or directories. On this level, the attacker will feel annoyed as it requires the attacker to change his attack tools and procedures.</p>
+<h2 id=tools>TOOLS:</h2>
+<p>At this point, attackers have exhausted their efforts trying to break into our system or they attempt to create new tools that serve the same purpose. However, doing so would cost them more money as they would need to build these new tools. Tools are malicious software or utilities used by the attackers to perform their attacks. Some examples of tools that attackers may use include vulnerability scanners, malicious documents, brute force attacks to steal credentials, and etc. At this stage, security professionals may use great weapons to defend themselves against attackers; some of these include antivirus signatures, detection rules, and YARA rules.</p>
+<h2 id=ttps>TTPS:</h2>
+<p>If security professionals can detect and respond to Tactics, Techniques, and Procedures (TTPs) quickly, it will leave the attacker in the dust. If we are able to detect and respond to their ways, then we can stop these attackers from breaching our systems.</p>
+</div>
+<footer class=post-footer>
+<div class=share-buttons>
+<a target=_blank rel="noopener noreferrer" aria-label="share Pyramid Of Pain on linkedin" href=https://www.linkedin.com/in/uval-maouda-672a46198><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM160.461 423.278V197.561h-75.04v225.717h75.04zm270.539.0V293.839c0-69.333-37.018-101.586-86.381-101.586-39.804.0-57.634 21.891-67.617 37.266v-31.958h-75.021c.995 21.181.0 225.717.0 225.717h75.02V297.222c0-6.748.486-13.492 2.474-18.315 5.414-13.475 17.767-27.434 38.494-27.434 27.135.0 38.007 20.707 38.007 51.037v120.768H431zM123.448 88.722C97.774 88.722 81 105.601 81 127.724c0 21.658 16.264 39.002 41.455 39.002h.484c26.165.0 42.452-17.344 42.452-39.002-.485-22.092-16.241-38.954-41.943-39.002z"/></svg>
+</a>
+</div>
+</footer>
+</article>
+</main>
+<footer class=footer>
+</footer>
+<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a>
+<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
+<script>document.querySelectorAll('pre > code').forEach(b=>{const c=b.parentNode.parentNode,a=document.createElement('button');a.classList.add('copy-code'),a.innerText='copy';function d(){a.innerText='copied!',setTimeout(()=>{a.innerText='copy'},2e3)}a.addEventListener('click',e=>{if('clipboard'in navigator){navigator.clipboard.writeText(b.textContent),d();return}const a=document.createRange();a.selectNodeContents(b);const c=window.getSelection();c.removeAllRanges(),c.addRange(a);try{document.execCommand('copy'),d()}catch(a){}c.removeRange(a)}),c.classList.contains("highlight")?c.appendChild(a):c.parentNode.firstChild==c||(b.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?b.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(a):b.parentNode.appendChild(a))})</script>
+</body>
+</html>

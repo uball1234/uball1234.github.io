@@ -4,15 +4,33 @@
     <title>Uval Maouda</title>
     <link>/</link>
     <description>Recent content on Uval Maouda</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 16 Dec 2022 14:01:10 -0800</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Surprise Surprise</title>
-      <link>/articles/article/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>TryHackMe: RootMe</title>
+      <link>/articles/tryhackme_rootme/</link>
+      <pubDate>Fri, 16 Dec 2022 14:01:10 -0800</pubDate>
       
-      <guid>/articles/article/</guid>
-      <description>Thank you for your support! Hello. If you like this template, I&amp;rsquo;d be happy to get a coffee donation :)
- </description>
+      <guid>/articles/tryhackme_rootme/</guid>
+      <description>This is a writeup of the TryHackMe Capture The Flag Room: RootMe. RootMe is a hosted website with some vulnerabilities. In this write up, I will include my steps and thought process.  STEP 1: We deployed the machine on TryHackMe and were provided an IP Address My initial thought was “Okay, why would they give me an IP address? Clearly, it serves some sort of purpose.” My next step was to think about what I could do with this IP address in order to get more information.</description>
+    </item>
+    
+    <item>
+      <title>Pyramid Of Pain</title>
+      <link>/articles/pyramid_of_pain/</link>
+      <pubDate>Fri, 16 Dec 2022 12:57:00 -0800</pubDate>
+      
+      <guid>/articles/pyramid_of_pain/</guid>
+      <description>What is the Pyramid of Pain and why is it needed? Pyramid of pain is a concept that helps security teams assess the effectiveness of their threat intelligence program and helps to identify ways to improve them. Essentially, this concept explains the value of indicators of compromise and how they can potentially agitate adversaries. Moreover, it explains how the loss of some indicators of compromise can cause more harm to adversaries than the loss of others.</description>
+    </item>
+    
+    <item>
+      <title>MITRE ATT&amp;CK FRAMEWORK</title>
+      <link>/articles/mitre_attack_framework/</link>
+      <pubDate>Tue, 13 Dec 2022 18:44:56 -0800</pubDate>
+      
+      <guid>/articles/mitre_attack_framework/</guid>
+      <description>What is the MITRE ATT&amp;amp;CK Framework? Before we can explain the MITRE ATT&amp;amp;CK Framework and what it is, we first need to understand what Advanced Persistent Groups (APT) and TTPs are. APTs are groups, teams, or even countries that engage in long-term attacks against other countries and organizations. Some common attributes of an APT include having vast amounts of resources at their disposal and sophistication of proprietary attacks and tools. In order to analyze APTs operations, security professionals use an approach called TTP, also known as Tactics, Techniques, and Procedures.</description>
     </item>
     
   </channel>

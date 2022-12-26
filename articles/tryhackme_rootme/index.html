@@ -1,0 +1,198 @@
+<!doctype html><html lang=en dir=auto>
+<head><meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=robots content="index, follow">
+<title>TryHackMe: RootMe | Uval Maouda</title>
+<meta name=keywords content>
+<meta name=description content="This is a writeup of the TryHackMe Capture The Flag Room: RootMe. RootMe is a hosted website with some vulnerabilities. In this write up, I will include my steps and thought process.  STEP 1: We deployed the machine on TryHackMe and were provided an IP Address My initial thought was “Okay, why would they give me an IP address? Clearly, it serves some sort of purpose.” My next step was to think about what I could do with this IP address in order to get more information.">
+<meta name=author content="Author's Name">
+<link rel=canonical href=/articles/tryhackme_rootme/>
+<link crossorigin=anonymous href=/assets/css/stylesheet.min.6c183503def1ac491340ec11bc99295e962bee702757fc04e8dad92381623f15.css integrity="sha256-bBg1A97xrEkTQOwRvJkpXpYr7nAnV/wE6NrZI4FiPxU=" rel="preload stylesheet" as=style>
+<script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=/images/favicon.ico>
+<link rel=icon type=image/png sizes=16x16 href=/images/favicon-16x16.png>
+<link rel=icon type=image/png sizes=32x32 href=/images/favicon-32x32.png>
+<link rel=apple-touch-icon href=/images/apple-touch-icon.png>
+<link rel=mask-icon href=/images/apple-touch-icon.png>
+<meta name=theme-color content="#2e2e33">
+<meta name=msapplication-TileColor content="#2e2e33">
+<noscript>
+<style>#theme-toggle,.top-link{display:none}</style>
+<style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
+</noscript>
+</head>
+<body id=top>
+<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<header class=header>
+<nav class=nav>
+<div class=logo>
+<a href accesskey=h title="Uval Maouda (Alt + H)">Uval Maouda</a>
+<span class=logo-switches>
+<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</button>
+</span>
+</div>
+<ul id=menu>
+<li>
+<a href=/ title=Home><span>Home</span></a>
+</li>
+<li>
+<a href=articles/ title=Articles>
+<span>Articles</span>
+</a>
+</li>
+<li>
+<a href=contact/ title=Contact>
+<span>Contact</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class=main>
+<article class=post-single>
+<header class=post-header>
+<div class=breadcrumbs><a href>Home</a>&nbsp;»&nbsp;<a href=/articles/>Articles</a></div>
+<h1 class=post-title>
+TryHackMe: RootMe
+</h1>
+<div class=post-meta><span title="2022-12-16 14:01:10 -0800 -0800">December 16, 2022</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Author's Name</div>
+</header> <div class=toc>
+<details>
+<summary accesskey=c title="(Alt + C)">
+<span class=details>Table of Contents</span>
+</summary>
+<div class=inner><ul>
+<li>
+<a href=#this-is-a-writeup-of-the-tryhackme-capture-the-flag-room-rootme aria-label="This is a writeup of the TryHackMe Capture The Flag Room: RootMe.">This is a writeup of the TryHackMe Capture The Flag Room: RootMe.</a><ul>
+<li>
+<a href=#rootme-is-a-hosted-website-with-some-vulnerabilities-in-this-write-up-i-will-include-my-steps-and-thought-process aria-label="RootMe is a hosted website with some vulnerabilities. In this write up, I will include my steps and thought process.">RootMe is a hosted website with some vulnerabilities. In this write up, I will include my steps and thought process.</a></li></ul>
+</li>
+<li>
+<a href=#step-1-we-deployed-the-machine-on-tryhackme-and-were-provided-an-ip-address aria-label="STEP 1: We deployed the machine on TryHackMe and were provided an IP Address">STEP 1: We deployed the machine on TryHackMe and were provided an IP Address</a></li>
+<li>
+<a href=#step-2-reconnaissance aria-label="STEP 2: Reconnaissance">STEP 2: Reconnaissance</a></li>
+<li>
+<a href=#step-3-what-do-i-do-with-this-information aria-label="STEP 3: What do I do with this information?">STEP 3: What do I do with this information?</a></li>
+<li>
+<a href=#step-4-shell aria-label="Step 4: Shell">Step 4: Shell</a></li>
+<li>
+<a href=#step-5-privilege-escalation aria-label="Step 5: Privilege Escalation">Step 5: Privilege Escalation</a>
+</li>
+</ul>
+</div>
+</details>
+</div>
+<div class=post-content>
+<p><img loading=lazy src=https://miro.medium.com/max/1400/1*dwjTlOhlmeorJ0TLUNuOAA.png alt>
+</p>
+<h3 id=this-is-a-writeup-of-the-tryhackme-capture-the-flag-room-rootme>This is a writeup of the TryHackMe Capture The Flag Room: RootMe.</h3>
+<h4 id=rootme-is-a-hosted-website-with-some-vulnerabilities-in-this-write-up-i-will-include-my-steps-and-thought-process>RootMe is a hosted website with some vulnerabilities. In this write up, I will include my steps and thought process.</h4>
+<hr>
+<h3 id=step-1-we-deployed-the-machine-on-tryhackme-and-were-provided-an-ip-address>STEP 1: We deployed the machine on TryHackMe and were provided an IP Address</h3>
+<p>My initial thought was “Okay, why would they give me an IP address? Clearly, it serves some sort of purpose.”
+My next step was to think about what I could do with this IP address in order to get more information.</p>
+<h3 id=step-2-reconnaissance>STEP 2: Reconnaissance</h3>
+<p>In this step, I decided that in order to get more information I needed to use an NMAP scan to identify any open ports, as well as the software they were using.
+I ran in my command line the following nmap scan:</p>
+<ul>
+<li>sudo nmap -sCV -O -vvv IP_Address -oA filename</li>
+<li>Sudo – superuser do</li>
+<li>-sCV – Performs script scanning using the default set of scripts - extra info + performs version detection</li>
+<li>-O – Performs OS detection.</li>
+<li>-v – Specify the verbosity. The more v&rsquo;s in the command the more verbose nmap will be.</li>
+<li>-oA – Outputs the Nmap scan</li>
+</ul>
+<p>Once my nmap scan was finished, I received the following information:</p>
+<ul>
+<li>The software version was Apache 2.4.29</li>
+<li>2 ports on the machine were open
+<ul>
+<li>Port 80 HTTP</li>
+<li>Port 22 SSH</li>
+</ul>
+</li>
+</ul>
+<p>Through the nmap scan, we can see that the box has a web server running on port 80, which normally indicates that the machine is hosting a website.</p>
+<h3 id=step-3-what-do-i-do-with-this-information>STEP 3: What do I do with this information?</h3>
+<p>Knowing that I have a website open on port 80, I decided to run gobuster which is “a brute-force scanner tool to enumerate directories and files of websites”
+The following is the command I used:</p>
+<ul>
+<li>gobuster dir -u http:// &ldquo;IP&rdquo; -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt</li>
+</ul>
+<p>This command gave me the following information:</p>
+<ul>
+<li>/uploads</li>
+<li>/css</li>
+<li>/js</li>
+<li>/panel</li>
+<li>server/status</li>
+</ul>
+<p>The information above is essentially a path we can get to by simply adding it to the end of the web address. In this case, the following web address was:</p>
+<ul>
+<li>http://“IP Address/uploads”</li>
+<li>http://“IP Address/css”</li>
+<li>http://“IP Address/js”</li>
+<li>http://“IP Address/panel”</li>
+<li>http://“IP Address/server-status”</li>
+</ul>
+<p>Once going through each of these, I realized that on http://“IP Address/panel” I could upload a document.
+My first thought was “Alright, I can probably put in a malicious file,” so I did some research online and found a reverse shell payload by pentestmonkey. I downloaded the file,edited it to my specifications (port and ip) and attempted to upload it.
+Unfortunately, it did not work because the extension was a php file, so I decided to try a different extension (php5) which ended up working.</p>
+<h3 id=step-4-shell>Step 4: Shell</h3>
+<p>Once the file was uploaded,I had to set up my netcat listener on the specification I edited earlier.</p>
+<ul>
+<li>nc -lvnp 4444</li>
+</ul>
+<p>In order for my netcat to pick up the connection, the document needs to be executed. So, while searching through the web address I found http://“IP Address/uploads” which had my php upload. I clicked on it – and Boom!– I had the connection.
+We have now gained a shell but it is an unstable shell. In order to stabilize the shell, I ran the following commands:</p>
+<ul>
+<li>$ python -c ‘import pty;pty.spawn(“/bin/bash”)’</li>
+<li>Ctrl+Z</li>
+<li>stty raw -echo</li>
+<li>fg</li>
+<li>export TERM=xterm</li>
+</ul>
+<p>Now that the shell was stable, I had to find a flag. I wanted to make it simple for myself, so instead of searching through every directory, I used the following command to find user.txt:</p>
+<ul>
+<li>Find / -type f -name user.txt</li>
+</ul>
+<p>This command gave me the directory for where user.txt was and I was able to change directories and cat the file.</p>
+<h3 id=step-5-privilege-escalation>Step 5: Privilege Escalation</h3>
+<p>Just like in the prior example, I did not want to search through everything one by one so in order to check for SUID files on our system, I ran this simple command:</p>
+<ul>
+<li>find / -perm -u=s -type f 2>/dev/null</li>
+</ul>
+<p>A list of directories came up and I started looking for something I considered to be strange. I saw that there was something with python:</p>
+<ul>
+<li>/usr/bin/python</li>
+</ul>
+<p>My first thought was to go to <a href=https://gtfobins.github.io/>https://gtfobins.github.io/</a> and look for possible privilege escalation commands for elevating the privileges.
+In there, I found the following command:</p>
+<ul>
+<li>python -c ‘import os; os.execl(“/bin/sh”, “sh”, “-p”)’</li>
+</ul>
+<p>After putting in that command: it worked.
+To double check that it worked,I ran whoami and the output was root
+In order to finish the box, I needed to find root.txt
+Ran the command ls, then changed directory to root then ran the cat root.txt command and got the final flag.</p>
+</div>
+<footer class=post-footer>
+<div class=share-buttons>
+<a target=_blank rel="noopener noreferrer" aria-label="share TryHackMe: RootMe on linkedin" href=https://www.linkedin.com/in/uval-maouda-672a46198><svg viewBox="0 0 512 512"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM160.461 423.278V197.561h-75.04v225.717h75.04zm270.539.0V293.839c0-69.333-37.018-101.586-86.381-101.586-39.804.0-57.634 21.891-67.617 37.266v-31.958h-75.021c.995 21.181.0 225.717.0 225.717h75.02V297.222c0-6.748.486-13.492 2.474-18.315 5.414-13.475 17.767-27.434 38.494-27.434 27.135.0 38.007 20.707 38.007 51.037v120.768H431zM123.448 88.722C97.774 88.722 81 105.601 81 127.724c0 21.658 16.264 39.002 41.455 39.002h.484c26.165.0 42.452-17.344 42.452-39.002-.485-22.092-16.241-38.954-41.943-39.002z"/></svg>
+</a>
+</div>
+</footer>
+</article>
+</main>
+<footer class=footer>
+</footer>
+<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a>
+<script>let menu=document.getElementById('menu');menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
+<script>document.querySelectorAll('pre > code').forEach(b=>{const c=b.parentNode.parentNode,a=document.createElement('button');a.classList.add('copy-code'),a.innerText='copy';function d(){a.innerText='copied!',setTimeout(()=>{a.innerText='copy'},2e3)}a.addEventListener('click',e=>{if('clipboard'in navigator){navigator.clipboard.writeText(b.textContent),d();return}const a=document.createRange();a.selectNodeContents(b);const c=window.getSelection();c.removeAllRanges(),c.addRange(a);try{document.execCommand('copy'),d()}catch(a){}c.removeRange(a)}),c.classList.contains("highlight")?c.appendChild(a):c.parentNode.firstChild==c||(b.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?b.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(a):b.parentNode.appendChild(a))})</script>
+</body>
+</html>

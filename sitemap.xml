@@ -3,15 +3,24 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>/articles/</loc>
+    <lastmod>2022-12-16T14:01:10-08:00</lastmod>
+  </url><url>
+    <loc>/articles/tryhackme_rootme/</loc>
+    <lastmod>2022-12-16T14:01:10-08:00</lastmod>
+  </url><url>
+    <loc>/</loc>
+    <lastmod>2022-12-16T14:01:10-08:00</lastmod>
+  </url><url>
+    <loc>/articles/pyramid_of_pain/</loc>
+    <lastmod>2022-12-16T12:57:00-08:00</lastmod>
+  </url><url>
+    <loc>/articles/mitre_attack_framework/</loc>
+    <lastmod>2022-12-13T18:44:56-08:00</lastmod>
   </url><url>
     <loc>/categories/</loc>
   </url><url>
     <loc>/contact/</loc>
   </url><url>
-    <loc>/articles/article/</loc>
-  </url><url>
     <loc>/tags/</loc>
-  </url><url>
-    <loc>/</loc>
   </url>
 </urlset>
